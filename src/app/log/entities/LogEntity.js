@@ -3,7 +3,7 @@ module.exports = (log) => {
     message: log.message || null,
     level: log.level || null,
     timestamp: log.timestamp || new Date(),
-    serviceName: log.serviceName || null,
+    service_name: log.service_name || null,
   };
   return obj;
 };

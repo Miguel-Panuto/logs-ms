@@ -14,11 +14,12 @@ module.exports = class DbLogger extends Transport {
       message: info.message || null,
       level: info.level || null,
       timestamp: new Date(),
-      serviceName: this.serviceName || null,
+      service_name: this.serviceName || null,
     };
     const conn = knex(config.db);
-    await createTables(conn);
-    await conn.insert(messageToSend).into('logs');
+    await createTables(conn).then(async () => {
+      await conn.insert(messageToSend).into('logs');
+    });
 
     callBack();
   }

@@ -1,7 +1,7 @@
 module.exports = ({ logController }) => [
   {
     method: 'get',
-    path: '/log',
+    path: '/logs',
     handler: logController.findLogs,
   },
 ];
