@@ -1,0 +1,18 @@
+version: '3.7'
+
+services:
+  rabbitmq:
+    image: rabbitmq:3.6.6-management
+    ports:
+      - 5672:5672
+      - 15672:15672
+
+  postgres:
+    image: postgres:14.0-alpine
+    restart: always
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=pass
+      - POSTGRES_DB=logs
+    ports:
+      - 5432:5432
