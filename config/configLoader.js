@@ -4,7 +4,7 @@ module.exports = {
   ...config,
   amqp: {
     ...config.amqp,
-    uri: proccess.env.AMQP_URI || config.amqp.uri,
+    uri: process.env.AMQP_URI || config.amqp.uri,
   },
   db: {
     ...config.db,
