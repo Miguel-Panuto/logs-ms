@@ -6,7 +6,9 @@
     "subs": [
       {
         "topicName": "sendLogs",
-        "topicEvent": "send-logs"
+        "topicEvent": "send-logs",
+        "topicType": "fanout",
+        "routingKey": ""
       }
     ],
     "pubs": []
